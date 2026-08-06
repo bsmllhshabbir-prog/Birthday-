@@ -1,100 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7 Days To Go!</title>
-    <style>
-        body {
-            background-color: #1a1617;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            margin: 0;
-        }
-        .card {
-            background-color: #262223;
-            border-radius: 15px;
-            padding: 25px;
-            max-width: 500px;
-            margin: 0 auto;
-            border: 1px solid #3d3335;
-            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.1);
-        }
-        h1 { color: #ff69b4; }
-        h2 { color: #ff8da1; }
-        .countdown {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff69b4;
-            background: rgba(255, 105, 180, 0.1);
-            padding: 10px;
-            border-radius: 10px;
-            display: inline-block;
-            margin: 15px 0;
-            border: 1px dashed #ff69b4;
-        }
-        .photos-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .photo-card {
-            width: 140px;
-            height: 180px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid #523b43;
-        }
-        .photo-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .btn {
-            background-color: #a81c37;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            margin-top: 20px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7 Days To Go! 🎉</title>
+  <style>
+    :root {
+      --primary-color: #ff85a2;
+      --secondary-color: #f7abb6;
+      --accent-color: #ffb6c1;
+      --bg-color: #fff0f5;
+      --card-bg: #ffffff;
+      --text-color: #5c3d46;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #a36b77;
+      font-weight: 600;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(255, 133, 162, 0.2);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .time-box {
+      background: var(--bg-color);
+      padding: 12px 10px;
+      border-radius: 12px;
+      min-width: 70px;
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    .btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+      margin-top: 15px;
+    }
+
+    .btn:hover {
+      background-color: #e66b88;
+      transform: scale(1.05);
+    }
+
+    #message {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background: var(--bg-color);
+      border-radius: 12px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-color);
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Countdown Begins! 💕</h1>
-    <p>Get ready for the special day!</p>
+  <header>
+    <h1>⏳ Countdown Begins! 🎂</h1>
+    <p class="subtitle">✨ Only 7 Days Left For The Big Day! ✨</p>
+  </header>
 
-    <div class="card">
-        <h2>Birthday Countdown ✨</h2>
-        
-        <div class="countdown">⏳ 7 Days Left! ⏳</div>
-
-        <p><b>Dear Hamza 💕,</b></p>
-        <p>The most special day of the year is almost here! Just 7 days left until your birthday! 🎂✨</p>
-        <p>Sending you lots of love and excitement as we count down to celebrate you. May your upcoming year be full of happiness, success, and endless smiles. 🤲💕</p>
-        <p>With lots of prayers and excitement,<br>❤️ <b>Bismillah</b></p>
-
-        <div class="photos-container">
-            <div class="photo-card">
-                <img src="118608.jpeg" alt="Photo 1">
-            </div>
-            <div class="photo-card">
-                <img src="Snapchat-17439674.jpg" alt="Photo 2">
-            </div>
-        </div>
-
-        <button class="btn">Stay Tuned! 🥳</button>
+  <div class="card">
+    <div class="countdown">
+      <div class="time-box"><span id="days">07</span>Days</div>
+      <div class="time-box"><span id="hours">00</span>Hours</div>
+      <div class="time-box"><span id="minutes">00</span>Mins</div>
+      <div class="time-box"><span id="seconds">00</span>Secs</div>
     </div>
 
+    <button class="btn" onclick="showMessage()">View 7-Day Wish 💖</button>
+
+    <div id="message">
+      <p>🎈 <strong>Just 7 days to go!</strong> The excitement starts now. Sending you lots of love and early birthday wishes as we count down to your special day! 🎉✨</p>
+    </div>
+  </div>
+
+  <script>
+    function showMessage() {
+      const msg = document.getElementById('message');
+      msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Target date: exactly 7 days from now
+    const targetDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.querySelector('.countdown').innerHTML = "<h3>🎂 Happy Birthday! 🎉</h3>";
+        return;
+      }
+
+      document.getElementById('days').innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+      document.getElementById('hours').innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+      document.getElementById('minutes').innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      document.getElementById('seconds').innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+    }, 1000);
+  </script>
 </body>
 </html>
+
 
 
         
